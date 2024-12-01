@@ -1,0 +1,94 @@
+import java.util.*;
+
+public class Cgpa_calculator {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Student ID: ");
+        String studentId = input.nextLine();
+
+        System.out.print("Number of Courses: ");
+        int numCourses = input.nextInt();
+
+        double totalCredits = 0;
+        double totalGradePoints = 0;
+
+        for (int i = 1; i <= numCourses; i++) {
+            System.out.println("\nCourse " + i + ":");
+
+
+            System.out.print("Credit (Max 3): ");
+            int credit = input.nextInt();
+            System.out.print("CT (Max 30): ");
+            int ctMarks = input.nextInt();
+            System.out.print("AT (Max 10): ");
+            int atMarks = input.nextInt();
+            System.out.print("FE (Max 60): ");
+            int feMarks = input.nextInt();
+
+            int totalMarks = ctMarks + atMarks + feMarks;
+            double percentage = (totalMarks / 100.0) * 100;
+
+            double gradePoint = 0.0;
+            String grade = "";
+
+            if (percentage >= 90) {
+                grade = "A+";
+                gradePoint = 4.0;
+            } else if (percentage >= 80) {
+                grade = "A";
+                gradePoint = 3.7;
+            } else if (percentage >= 70) {
+                grade = "B+";
+                gradePoint = 3.3;
+            } else if (percentage >= 60) {
+                grade = "B";
+                gradePoint = 3.0;
+            } else if (percentage >= 50) {
+                grade = "C+";
+                gradePoint = 2.7;
+            } else if (percentage >= 40) {
+                grade = "C";
+                gradePoint = 2.3;
+            } else {
+                grade = "F";
+                gradePoint = 0.0;
+            }
+
+            totalCredits += credit;
+            totalGradePoints += gradePoint * credit;
+            System.out.println("Percentage: " + percentage + "%");
+            System.out.println("Grade: " + grade);
+            System.out.println("Grade Point: " + gradePoint);
+        }
+        double cgpa = totalGradePoints / totalCredits;
+
+
+        System.out.println("\nStudent ID: " + studentId);
+        System.out.println("Total Credits Taken: " + totalCredits);
+        System.out.println("Total Credits Earned: " + totalCredits);
+        System.out.printf("CGPA: %.2f\n", cgpa);
+
+        String finalGrade = "";
+        if (cgpa >= 3.7) {
+            finalGrade = "A";
+        } else if (cgpa >= 3.3) {
+            finalGrade = "B+";
+        } else if (cgpa >= 3.0) {
+            finalGrade = "B";
+        } else if (cgpa >= 2.7) {
+            finalGrade = "C+";
+        } else if (cgpa >= 2.3) {
+            finalGrade = "C";
+        } else {
+            finalGrade = "F";
+        }
+
+        System.out.println("Final Grade: " + finalGrade);
+        
+        input.close();
+    }
+
+    
+}
