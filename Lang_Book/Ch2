@@ -1,1 +1,102 @@
-te
+
+Example 1 : 
+
+public class Ch2Ex1 {
+    public static void main(String[] args) {
+
+        double circleRadius; // Radius of the circle
+        double circleArea;   // Area of the circle
+
+        // Assign a value to the radius
+        circleRadius = 20.0;
+
+        // Compute the area
+        circleArea = circleRadius * circleRadius * 3.14159;
+
+        // Display the result
+        System.out.println("The area for the circle with radius " + circleRadius + " is " + circleArea);
+    }
+}
+
+Example 2 : 
+
+import java.util.*;
+
+public class Ch2Ex2 {
+    public static void main(String[] args) {
+
+        // Create a Scanner object for user input
+        Scanner input = new Scanner(System.in);
+
+        // Prompt the user to enter a radius
+        System.out.print("Enter a number for radius: ");
+        double radius = input.nextDouble();
+
+        // Compute the area
+        double area = radius * radius * 3.14159;
+
+        // Display the result
+        System.out.println("The area for the circle with radius: " + radius + " is: " + area);
+    }
+}
+
+Example 3 : 
+
+import java.util.*;
+
+public class Ch2Ex3 {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner input = new Scanner(System.in);
+
+        // Prompt the user to enter three numbers
+        System.out.print("Enter three numbers: ");
+        double number1 = input.nextDouble();
+        double number2 = input.nextDouble();
+        double number3 = input.nextDouble();
+
+        // Compute the average
+        double average = (number1 + number2 + number3) / 3;
+
+        // Display the results
+        System.out.println("The average of " + number1 + ", " + number2 + ", and " + number3 + " is " + average);
+    }
+}
+
+Example 4 : 
+
+import java.util.*;
+
+public class Ch2Ex4 {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner input = new Scanner(System.in);
+
+        // Prompt and read a byte value
+        System.out.print("Enter a byte value: ");
+        byte a = input.nextByte();
+
+        // Prompt and read a short value
+        System.out.print("Enter a short value: ");
+        short b = input.nextShort();
+
+        // Prompt and read an int value
+        System.out.print("Enter an int value: ");
+        int c = input.nextInt();
+
+        // Prompt and read a long value
+        System.out.print("Enter a long value: ");
+        long d = input.nextLong();
+
+        // Prompt and read a float value
+        System.out.print("Enter a float value: ");
+        float e = input.nextFloat();
+
+        // Display the entered values
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(d);
+        System.out.println(e);
+    }
+}
